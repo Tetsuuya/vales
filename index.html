@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://icon2.cleanpng.com/20240322/uho/transparent-emoji-cat-heart-eyes-smiling-cute-smiling-cat-with-heart-eyes-on-white-background65fdd17c3900c9.25281172.webp">
+    <title>Happy Valentine's Day!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    
+    <main>
+        <div class="square">
+            <img src="cat.png" alt="Image" class="image">
+            <img src="giftbox.png" alt="Image" class="image2">
+            <img src="heartu.png" alt="Image" class="image3">
+        </div>
+        <div class="buttons">
+            <button class="yes-button">Yes</button>
+            <button class="no-button">No</button>
+        </div>
+    </main>
+    <script>
+        const noButton = document.querySelector('.no-button');
+        const yesButton = document.querySelector('.yes-button');
+        const square = document.querySelector('.square');
+        const messages = ["NO", "NO", "NO", "NO"];
+        let count = 0;
+        let messageIndex = 0;
+
+        noButton.addEventListener('click', handleNoClick);
+        yesButton.addEventListener('click', handleYesClick);
+
+        function handleNoClick() {
+            updateNoButtonText();
+            resizeYesButton();
+            moveNoButton();
+            incrementCount();
+        }
+
+        function handleYesClick() {
+            window.location.href = "yehey.html";
+        }
+
+        function updateNoButtonText() {
+            noButton.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        }
+
+        function resizeYesButton() {
+            const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = `${currentSize * 1.5}px`;
+        }
+
+        function moveNoButton() {
+            const squareRect = square.getBoundingClientRect();
+            let x, y;
+
+            if (Math.random() < 0.5) {
+                x = Math.random() < 0.5 ? squareRect.left - noButton.offsetWidth : squareRect.right;
+                y = Math.random() * window.innerHeight;
+            } else {
+                x = Math.random() * window.innerWidth;
+                y = Math.random() < 0.5 ? squareRect.top - noButton.offsetHeight : squareRect.bottom;
+            }
+
+            noButton.style.position = 'absolute';
+            noButton.style.top = `${y}px`;
+            noButton.style.left = `${x}px`;
+        }
+
+        function incrementCount() {
+            count++;
+            if (count >= 3) {
+                centerYesButton();
+            }
+        }
+
+        function centerYesButton() {
+            yesButton.style.position = 'absolute';
+            yesButton.style.top = '50%';
+            yesButton.style.left = '50%';
+            yesButton.style.transform = 'translate(-50%, -50%)';
+            yesButton.style.zIndex = '1000';
+        }
+    </script>
+</body>
+</html>

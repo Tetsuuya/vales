@@ -1,0 +1,77 @@
+body {
+    background: url('bea.png');
+    background-size: fit;
+    background-repeat: repeat-x;
+}
+main {
+    padding: 20px;
+    margin-bottom: 60px; /* Add some space between main content and footer */
+    align-items: center;
+}
+
+.square {
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff; /* Maroon background color */
+    border-radius: 10px; /* Smooth edge */
+    margin: auto;
+    margin-top: 150px;
+    z-index: 1;
+}
+
+.image {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;  /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Ensures exact centering */
+    z-index: 1;
+}
+
+.image2 {
+    width: 150px;
+    height: 130px;
+    position: absolute;
+    top: 18%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.image3 {
+    width: 150px;
+    height: 130px;
+    position: absolute;
+    top: 55%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add space between buttons */
+    width: 100%;
+    max-width: 400px; /* Ensure buttons container doesn't exceed square width */
+    margin: auto;
+}   
+
+.yes-button, .no-button {
+    background-color: #047021; /* Maroon background color */
+    color: #FFFFFF; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative; /* Ensure buttons are positioned relative to their container */
+}
+
+.yes-button:hover, .no-button:hover {
+    background-color: #8f0a0a; /* Darker maroon background color */
+}
